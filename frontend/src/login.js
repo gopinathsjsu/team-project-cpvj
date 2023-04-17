@@ -26,7 +26,15 @@ const Login = ()=>{
     //     email:"chiruhas@gmail.com"
     // }
     // sessionStorage.setItem('employee', JSON.stringify(el));
-
+    const submitHandler = async () => {
+        validateEmail(email);
+        validatePassword(password);
+        if (await authenticate(email, password)) {
+            console.log("authenticated successfully");
+        } else {
+            console.log("authentication failed");
+        }
+    }
 
 }
 
