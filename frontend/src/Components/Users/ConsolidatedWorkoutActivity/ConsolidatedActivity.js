@@ -22,6 +22,40 @@ const ConsolidatedActivity = ()=>{
      *
      */
 
+    useEffect(()=>{
+        setData(props.data || [])
+
+    })
+
+    let el =[]
+    // console.log(data)
+    for (let i = 0; i < 11 && data.length>0 ; i++) {
+        let t = <Grid.Container key={i} justify="center">
+
+            <Grid xs={4}>
+
+                <Tooltip content={i + 1}>
+                    <Card variant="bordered" css={{
+                        width: "15px",
+                        height: "15px",
+                        backgroundColor: data[i].time === 0 ? "#000" : data[i].time > 60 ? "#4F7942 " : data[i].time > 30 ? "#50C878" : "#AFE1AF"
+                    }}></Card>
+                </Tooltip>
+                <Spacer y={1.3}></Spacer>
+
+            </Grid>
+            <Grid xs={4}>
+                <Tooltip content={i+12}>
+                    <Card variant="bordered" css={{
+                        width: "15px",
+                        height: "15px",
+                        backgroundColor: data[i+11].time === 0 ? "#000" : data[i+11].time > 60 ? "#4F7942 " : data[i+11].time > 30 ? "#50C878" : "#AFE1AF"
+                    }}></Card>
+                </Tooltip>
+
+
+            </Grid>
+
 }
 
 
