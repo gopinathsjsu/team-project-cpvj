@@ -35,6 +35,18 @@ const Login = ()=>{
             console.log("authentication failed");
         }
     }
+    const validateEmail = (email) => {
+        if (email === "") {
+            setEmailError('Enter Email address!')
+        }
+    }
+    const validatePassword = (password) => {
+        if (password === "") {
+            setPasswordError('Enter Password!')
+        } else if (password.length < 6) {
+            setPasswordError('Password must contain atleast 6 characters!')
+        }
+    }
 
 }
 
