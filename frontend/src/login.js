@@ -47,6 +47,16 @@ const Login = ()=>{
             setPasswordError('Password must contain atleast 6 characters!')
         }
     }
+    const handleEmailChange = (event) => {
+        setEmailError('');
+        setSuccessMsg('');
+        setEmail(event.target.value);
+    }
+    const handlePassChange = (event) => {
+        setPasswordError('');
+        setSuccessMsg('');
+        setPassword(event.target.value)
+    }
 
 }
 
