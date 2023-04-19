@@ -54,7 +54,30 @@ const ConsolidatedActivity = ()=>{
                 </Tooltip>
 
 
-            </Grid>
+            </Grid> <Grid xs={4}>
+
+
+            <Tooltip content={i + 22 < data.length ? i + 23 : ""}>
+                {/*<Card variant="bordered" css={{ width: "15px",height:"15px", backgroundColor:data[i].time>60?"#4F7942 ":data[i].time>30?"#50C878":"#AFE1AF"}}></Card>*/}
+                {i + 22 < data.length ? <Card variant="bordered" css={{
+                    width: "15px",
+                    height: "15px",
+                    backgroundColor: data[i+22].time === 0 ? "#000" : data[i+22].time > 60 ? "#4F7942 " : data[i+22].time > 30 ? "#50C878" : "#AFE1AF"
+                }}></Card> : ""}
+            </Tooltip>
+            <Spacer y={1}></Spacer>
+        </Grid>
+
+        </Grid.Container>
+
+
+        el.push(t)
+    }
+
+
+
+    return el.map((ob,index)=>ob)
+
 
 }
 
