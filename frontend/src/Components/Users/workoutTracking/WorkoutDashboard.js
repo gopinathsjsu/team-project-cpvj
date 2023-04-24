@@ -4,9 +4,6 @@ import axios from "axios";
 
 const WorkoutDashboard = (props) => {
 
-    const days = [{key:"1 day"},{key:"7 days"},{key:"30 days"},{key:"60 days"},{key : "90 days"}];
-    const [day, setDay] = React.useState(new Set(["1 day"]));
-    const [selectedDay, setSelectedDay] = React.useState("1 day");
 
 
 
