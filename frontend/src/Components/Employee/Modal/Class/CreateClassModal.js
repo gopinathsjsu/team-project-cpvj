@@ -103,7 +103,20 @@ const CreateClassModal = forwardRef(({}, ref) => {
 
     }
 
+    const apiCall = async (data) => {
+        console.log("inside");
+        console.log(JSON.stringify(data));
+        try{
+            await axios.post('http://100.26.42.194:8080/class', JSON.stringify(data))
+            alert("Data submitted sucessfully");
+            closeHandler()
+        }catch (e){
+            alert("OOPs something happened");
+        }
 
+        setLoading(false);
+
+    }
 
     const el = loading ? <Button type="submit"><Loading color='success'/></Button> :
         <Button type="submit">Submit</Button>
