@@ -62,7 +62,43 @@ const CreateClassModal = forwardRef(({}, ref) => {
         const day = event.target.day.children[1].innerHTML;
 
 
+        if (day === "Day of the week") {
 
+            alert("Day of week is required");
+        } else if (location === "Choose Location") {
+            // show alert dialog
+            alert("location is required");
+        } else {
+
+            setLoading(true);
+
+            const d = locations.filter((el)=>{
+
+                return el.key===location
+            })
+            const locValue = d[0].value
+
+            const data = {
+                name: event.target.className.value, //change to name
+                instructorname: event.target.instructorName.value,
+                startdate: event.target.startDate.value,
+                enddate: event.target.endDate.value,
+                starttime: event.target.startTime.value,
+                endtime: event.target.endTime.value,
+                locationid: d[0].value, //change to locationid
+                day: day,
+                cost:parseInt(event.target.cost.value)
+            }
+
+
+
+
+            // do some validations on data
+
+
+              apiCall(data);
+            // make a rest API call.
+        }
 
 
     }
