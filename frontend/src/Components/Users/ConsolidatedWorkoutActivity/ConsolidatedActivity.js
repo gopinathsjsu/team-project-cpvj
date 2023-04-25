@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import {Card, Grid, Spacer, Tooltip} from "@nextui-org/react";
 
-const ConsolidatedActivity = ()=>{
+const ConsolidatedActivity = (props) => {
+
     // console.log(props.data);
     const [data, setData] = useState([]);
 
@@ -21,6 +22,7 @@ const ConsolidatedActivity = ()=>{
      *
      *
      */
+
 
     useEffect(()=>{
         setData(props.data || [])
@@ -49,24 +51,25 @@ const ConsolidatedActivity = ()=>{
                     <Card variant="bordered" css={{
                         width: "15px",
                         height: "15px",
-                        backgroundColor: data[i+11].time === 0 ? "#000" : data[i+11].time > 60 ? "#4F7942 " : data[i+11].time > 30 ? "#50C878" : "#AFE1AF"
+                        backgroundColor: data[i+11].time === 0 ? "#000" : data[i+11].time > 60 ? "#4F7942 " : (data[i+11].time > 30 ? "#50C878" : "#AFE1AF")
                     }}></Card>
                 </Tooltip>
 
 
-            </Grid> <Grid xs={4}>
+            </Grid>
+            <Grid xs={4}>{}
 
 
-            <Tooltip content={i + 22 < data.length ? i + 23 : ""}>
-                {/*<Card variant="bordered" css={{ width: "15px",height:"15px", backgroundColor:data[i].time>60?"#4F7942 ":data[i].time>30?"#50C878":"#AFE1AF"}}></Card>*/}
-                {i + 22 < data.length ? <Card variant="bordered" css={{
-                    width: "15px",
-                    height: "15px",
-                    backgroundColor: data[i+22].time === 0 ? "#000" : data[i+22].time > 60 ? "#4F7942 " : data[i+22].time > 30 ? "#50C878" : "#AFE1AF"
-                }}></Card> : ""}
-            </Tooltip>
-            <Spacer y={1}></Spacer>
-        </Grid>
+                <Tooltip content={i + 22 < data.length ? i + 23 : ""}>
+                    {/*<Card variant="bordered" css={{ width: "15px",height:"15px", backgroundColor:data[i].time>60?"#4F7942 ":data[i].time>30?"#50C878":"#AFE1AF"}}></Card>*/}
+                    {i + 22 < data.length ? <Card variant="bordered" css={{
+                        width: "15px",
+                        height: "15px",
+                        backgroundColor: data[i+22].time === 0 ? "#000" : data[i+22].time > 60 ? "#4F7942 " : data[i+22].time > 30 ? "#50C878" : "#AFE1AF"
+                    }}></Card> : ""}
+                </Tooltip>
+                <Spacer y={1}></Spacer>
+            </Grid>
 
         </Grid.Container>
 
