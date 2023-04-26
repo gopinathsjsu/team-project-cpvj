@@ -31,7 +31,16 @@ const updateClassModal = forwardRef(({}, ref) => {
 
     const [selected, setSelected] = React.useState(new Set(["Day of the week"]));
 
-
+    const [data, setData] = useState({
+        className:"Chiruhas",
+        instructorName:"Bobbadi",
+        startDate:"2000-06-26",
+        endDate:"2000-07-26",
+        startTime:"13:25",
+        endTime:"14:45",
+        day:"",
+        location:"",
+    });
 
     const selectedValue = React.useMemo(
         () => Array.from(selected).join(", ").replaceAll("_", " "),
