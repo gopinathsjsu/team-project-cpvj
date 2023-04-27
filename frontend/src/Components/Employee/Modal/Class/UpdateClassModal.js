@@ -73,9 +73,50 @@ const updateClassModal = forwardRef(({}, ref) => {
 
     };
 
+    const formSubmitHandler = (event) => {
+        event.preventDefault();
+
+        const location = event.target.location.children[1].innerHTML;
+        const day = event.target.day.children[1].innerHTML;
 
 
+        if (day === "Day of the week") {
 
+            alert("Day of week is required");
+        } else if (location === "Choose Location") {
+            // show alert dialog
+            alert("location is required");
+        } else {
+
+            setLoading(true);
+
+            const d = locations.filter((el)=>{
+
+                return el.key===location
+            })
+            const locValue = d[0].value
+
+            const data = {
+                className: event.target.className.value,
+                instructorname: event.target.instructorName.value,
+                startdate: event.target.startDate.value,
+                enddate: event.target.endDate.value,
+                starttime: event.target.startTime.value,
+                endtime: event.target.endTime.value,
+                location: location,
+                day: day,
+                cost:event.target.cost.value
+            }
+
+            // do some validations on data
+
+
+            apiCall(data);
+            // make a rest API call.
+        }
+
+
+    }
 
     const apiCall = async (data) => {
         console.log("inside");
