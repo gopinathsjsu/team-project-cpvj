@@ -77,7 +77,17 @@ const updateClassModal = forwardRef(({}, ref) => {
 
 
 
+    const apiCall = async (data) => {
+        console.log("inside");
+        try{
+            await axios.post('/', data)
+        }catch (e){
+            alert("OOPs something happened");
+        }
 
+        setLoading(false);
+
+    }
 
     const el = loading ? <Button type="submit"><Loading color='success'/></Button> :
         <Button type="submit">Submit</Button>
