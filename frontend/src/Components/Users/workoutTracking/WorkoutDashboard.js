@@ -17,7 +17,77 @@ const WorkoutDashboard = (props) => {
         weightTrainning: 0
     })
 
+    const getData = async () => {
 
+
+        let d=""
+        day.forEach((value) =>{
+            d = value
+        });
+        d = d.split(" ")[0]
+        const user = JSON.parse(sessionStorage.user)
+
+        let d2 = await axios.get(`http://100.26.42.194:8080/getPastWorkoutData?interval=${d}&userid=${user.id}`);
+
+        d2 = d2.data || []
+
+        console.log(d2);
+
+
+        //
+        //
+        // // Done
+        // // required data format
+        // /**
+        //  * [
+        //  *   {
+        //  *     "devicetype": "Thread Mill",
+        //  *     "totaltimeseconds": 5100
+        //  *   },
+        //  *   {
+        //  *     "devicetype": "cycling",
+        //  *     "totaltimeseconds": 5100
+        //  *   },
+        //  *   {
+        //  *     "devicetype": "stair machine",
+        //  *     "totaltimeseconds": 3600
+        //  *   },
+        //  *   {
+        //  *     "devicetype": "weight training",
+        //  *     "totaltimeseconds": 2700
+        //  *   }
+        //  * ]
+        //  */
+        //
+        //
+        //
+        //
+        //
+
+        let arr = [0,0,0,0];
+
+        d2.map((el,i)=>{
+
+            arr[parseInt(el.devicetype)-1]=(el.totaltimeseconds)/60
+
+        })
+        console.log(arr);
+
+        setData((prevData)=>{
+            return {
+                ...prevData,
+                treadmill:arr[0],
+                cycling: arr[1],
+                stairMachine: arr[2],
+                weightTrainning: arr[3]
+            }
+        });
+    };
+
+    useEffect(() => {
+
+        getData()
+    },[]);
 
 
 
