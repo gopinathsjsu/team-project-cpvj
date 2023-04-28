@@ -90,6 +90,82 @@ const WorkoutDashboard = (props) => {
     },[]);
 
 
+    return <Grid.Container >
+        <Grid xs={12} justify="center">
+            <Text h4>Your Activity</Text>
+
+        </Grid>
+        <Grid xs={12} justify="center">
+            <Dropdown name="days">
+                <Dropdown.Button flat color="secondary" css={{tt: "capitalize"}} name='workoutType' required>
+                    {selectedDay}
+                </Dropdown.Button>
+                <Dropdown.Menu
+                    aria-label="Single selection actions"
+                    color="secondary"
+                    disallowEmptySelection
+                    selectionMode="single"
+                    selectedKeys={days}
+                    items={days}
+                    onSelectionChange={(e) => {
+
+                        setDay((currentState) => {
+                            let d = ""
+                            e.forEach((value) => {
+                                d = value
+                            });
+                            currentState.clear()
+                            currentState.add(d)
+                            setSelectedDay(d)
+                            return currentState
+                        })
+
+                        getData()
+                    }
+                    }
+
+                >
+
+                    {(item) => (
+                        <Dropdown.Item>
+                            {item.key}
+                        </Dropdown.Item>
+                    )}
+                </Dropdown.Menu>
+            </Dropdown>
+        </Grid>
+        <Grid xs={6} justify="center">
+            <Grid.Container gap={2}>
+                <Grid xs={8}>
+                    <Text h4>Weight Training</Text>
+                </Grid>
+                <Grid xs={4}>
+                    <Text h4>{data.weightTrainning}</Text>
+                </Grid>
+            </Grid.Container>
+
+
+
+        </Grid>
+
+        <Grid xs={6} justify="center">
+            <Grid.Container gap={2}>
+                <Grid xs={8}>
+                    <Text h4>Cycling</Text>
+                </Grid>
+                <Grid xs={4}>
+                    <Text h4>{data.cycling}</Text>
+                </Grid>
+            </Grid.Container>
+
+
+
+        </Grid>
+
+
+
+    </Grid.Container>
+
 
 
 
