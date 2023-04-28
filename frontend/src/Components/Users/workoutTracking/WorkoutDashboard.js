@@ -162,6 +162,31 @@ const WorkoutDashboard = (props) => {
 
         </Grid>
 
+        <Grid xs={6} justify="center">
+
+            <Grid.Container gap={2}>
+                <Grid xs={8}>
+                    <Text h4>Stair Machine</Text>
+                </Grid>
+                <Grid xs={4}>
+                    <Text h4>{data.stairMachine}</Text>
+                </Grid>
+            </Grid.Container>
+
+        </Grid>
+
+        <Grid xs={6} justify="center">
+            <Grid.Container gap={2}>
+                <Grid xs={8}>
+                    <Text h4>Treadmill</Text>
+                </Grid>
+                <Grid xs={4}>
+                    <Text h4>{data.treadmill}</Text>
+                </Grid>
+            </Grid.Container>
+        </Grid>
+
+
 
 
     </Grid.Container>
