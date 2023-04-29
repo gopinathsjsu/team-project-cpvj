@@ -15,7 +15,7 @@ const EmployeeDashboard = () => {
 
     const navigate = useNavigate();
 
-
+    let e  = JSON.parse(sessionStorage.employee)
 
 
     useEffect(()=>{
@@ -23,6 +23,9 @@ const EmployeeDashboard = () => {
 
 
 
+        if(!e){
+            navigate("/login");
+        }
 
 
 
