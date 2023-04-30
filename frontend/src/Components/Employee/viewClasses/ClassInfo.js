@@ -23,6 +23,27 @@ const ClassInfo = ()=>{
     const [data, setData] = useState([])
 
 
+    const getData = async () => {
+
+        let d=""
+        selected.forEach((value) =>{
+            d = value
+        });
+
+        console.log(`http://100.26.42.194:8080/getClassesForEmployee?day=${d}&locationid=${employee.locationid}`);
+
+        console.log(`http://100.26.42.194:8080/getClassesForEmployee?day=${d}&locationid=${employee.locationid}`);
+
+
+        const { data } = await axios.get(`http://100.26.42.194:8080/getClassesForEmployee?day=${d}&locationid=${employee.locationid}`);
+        console.log(data);
+        setData(data);
+    };
+
+    useEffect(()=>{
+        getData()
+    },[])
+
 
     return <Grid.Container gap={2}>
         <Grid xs={12} justify="center"> <Text h2> Classes Information </Text></Grid>
