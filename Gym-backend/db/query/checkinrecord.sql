@@ -1,16 +1,17 @@
--- name: CreateEmployee :one
-INSERT INTO employee (
-    name,
-    email,
-    hashedpassword,
-    locationid
-) VALUES (
-             $1, $2, $3, $4
-         ) RETURNING *;
+-- name: CreateCheckinRecords :one
+insert INTO checkinrecords
+(type,userid,employeeid,locationid )
+VALUES
+    ($1,$2,$3,$4) RETURNING *;
 
--- name: GetEmployee :one
-SELECT * FROM employee
-WHERE id = $1 LIMIT 1;
+
+-- name: GetLatestCheckinRecord :one
+SELECT * FROM checkinrecords
+WHERE userid = $1
+ORDER BY time desc
+LIMIT 1;
+
+
 
 -- -- name: UpdateUser :one
 -- UPDATE users
