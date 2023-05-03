@@ -16,6 +16,10 @@ const UserManagement = () => {
                 <Card>
                     <Card.Body>
                         <Button onClick={() => addUser.current.addUser()}> Add User </Button>
+                        <Spacer y={1}/>
+                        <Button onClick={() => checkUser.current.checkInUser()}> Checkin User </Button>
+                        <Spacer y={1}/>
+                        <Button onClick={() => checkUser.current.checkOutUser()}> CheckOut User </Button>
                     </Card.Body>
                 </Card>
             </Grid>
