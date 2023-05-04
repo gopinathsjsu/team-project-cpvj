@@ -39,6 +39,32 @@ const CheckModal = forwardRef((props, ref) => {
         setLoading(true);
 
     };
+    const formSubmitHandler = (event) => {
+        event.preventDefault();
+
+        // {
+        //     "employeeid": 0,
+        //     "locationid": 0,
+        //     "type": 0, // 1 for checkin 2 for checkout
+        //     "email": 0
+        // }
+
+
+        //todo fetch locationid and employeeid from local data.
+
+        const employee = JSON.parse(sessionStorage.employee)
+
+        const d = {
+            "useremail": event.target.email.value,
+            "type" : data.isCheckIn?1:2,
+            "locationid":employee.locationid,
+            "employeeid":employee.id
+
+        }
+        apiCall(d)
+
+
+    }
 
 });
 export default CheckModal;
