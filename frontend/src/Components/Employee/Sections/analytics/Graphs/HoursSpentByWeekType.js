@@ -4,16 +4,16 @@ import {Dropdown, Grid, Tooltip} from "@nextui-org/react";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {faker} from "@faker-js/faker";
-//,
-// ChartJS.register(
-//     CategoryScale,
-//     LinearScale,
-//     PointElement,
-//     LineElement,
-//     Title,
-//     Tooltip,
-//     Legend
-// );
+,
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
 
 
 const HoursSpentByWeekType = () => {
@@ -29,42 +29,42 @@ const HoursSpentByWeekType = () => {
         value: 6
     }, {key: "San Jose", value: 7}];
 
-    // const [selected, setSelected] = React.useState(new Set(["All"]));
-    // const [selectedLocation, setSelectedLocation] = React.useState("All");
+    const [selected, setSelected] = React.useState(new Set(["All"]));
+    const [selectedLocation, setSelectedLocation] = React.useState("All");
+
+    const [selectedType, setSelectedType] = React.useState(new Set(["Week-Day"]));
+    const [selectedChoice, setSelectedChoice] = React.useState("Week-Day");
+
+    // const [classData, setClassData] = useState([]);
+    // const [enrollmentData, setEnrollmentData] = useState([]);
     //
-    // const [selectedType, setSelectedType] = React.useState(new Set(["Week-Day"]));
-    // const [selectedChoice, setSelectedChoice] = React.useState("Week-Day");
-    //
-    // // const [classData, setClassData] = useState([]);
-    // // const [enrollmentData, setEnrollmentData] = useState([]);
-    // //
-    //
-    // let labels = [
-    //     "12am",
-    //     "1am",
-    //     "2am",
-    //     "3am",
-    //     "4am",
-    //     "5am",
-    //     "6am",
-    //     "7am",
-    //     "8am",
-    //     "9am",
-    //     "10am",
-    //     "11am",
-    //     "12pm",
-    //     "1pm",
-    //     "2pm",
-    //     "3pm",
-    //     "4pm",
-    //     "5pm",
-    //     "6pm",
-    //     "7pm",
-    //     "8pm",
-    //     "9pm",
-    //     "10pm",
-    //     "11pm"
-    // ]
+
+    let labels = [
+        "12am",
+        "1am",
+        "2am",
+        "3am",
+        "4am",
+        "5am",
+        "6am",
+        "7am",
+        "8am",
+        "9am",
+        "10am",
+        "11am",
+        "12pm",
+        "1pm",
+        "2pm",
+        "3pm",
+        "4pm",
+        "5pm",
+        "6pm",
+        "7pm",
+        "8pm",
+        "9pm",
+        "10pm",
+        "11pm"
+    ]
 
     const options = {
         responsive: true,
@@ -79,18 +79,18 @@ const HoursSpentByWeekType = () => {
         },
     };
 
-    // const data = {
-    //     labels,
-    //     datasets: [
-    //         {
-    //             label: 'Hour\'s Spent',
-    //             data: labels.map(() => faker.datatype.number({ min: 0, max: 500 })),
-    //             borderColor: 'rgb(255, 99, 132)',
-    //             backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    //         },
-    //
-    //     ],
-    // }
+    const data = {
+        labels,
+        datasets: [
+            {
+                label: 'Hour\'s Spent',
+                data: labels.map(() => faker.datatype.number({ min: 0, max: 500 })),
+                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            },
+
+        ],
+    }
 
 
     const getData = () => {
@@ -116,35 +116,10 @@ const HoursSpentByWeekType = () => {
 
         const dayType = v === 'Week-Day' ? 0 : 1
 
-       // const d = axios.get(`http://100.26.42.194/someEndpoint?locationid=${locationValue}&dayType=${dayType}`)
-
-
-        // setClassData((p) => {
-        //     let t = [];
-        //
-        //     for (let i = 0; i < d.length; i++) {
-        //         t.push(d[i].classes_offered)
-        //     }
-        //
-        //     return t;
-        // })
-        //
-        // setEnrollmentData((p) => {
-        //     let t = [];
-        //
-        //     for (let i = 0; i < d.length; i++) {
-        //         t.push(d[i].attendees)
-        //     }
-        //
-        //     return t;
-        // })
 
 
     }
 
-    // useEffect(() => {
-    //     getData();
-    // }, [])
 
 
     return <Grid.Container>
@@ -198,7 +173,7 @@ const HoursSpentByWeekType = () => {
             </Dropdown>
         </Grid>
         <Grid xs={1}>
-            {/*for weekly day vs class*/}
+
             <Dropdown name="l1">
                 <Dropdown.Button flat color="secondary" css={{tt: "capitalize"}} name='day'>
                     {selectedLocation}
@@ -233,11 +208,11 @@ const HoursSpentByWeekType = () => {
                     }
                 >
 
-                    {/*{(item) => (*/}
-                    {/*    <Dropdown.Item>*/}
-                    {/*        {item.key}*/}
-                    {/*    </Dropdown.Item>*/}
-                    {/*)}*/}
+                    {(item) => (
+                        <Dropdown.Item>
+                            {item.key}
+                        </Dropdown.Item>
+                    )}
                 </Dropdown.Menu>
             </Dropdown>
         </Grid>
