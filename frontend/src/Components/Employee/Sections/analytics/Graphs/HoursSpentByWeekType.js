@@ -1,10 +1,10 @@
 import {Line} from 'react-chartjs-2';
 import {CategoryScale, Chart as ChartJS, Legend, LinearScale, LineElement, PointElement, Title} from "chart.js";
 import {Dropdown, Grid, Tooltip} from "@nextui-org/react";
-import React, {useEffect, useState} from "react";
-import axios from "axios";
+import React from "react";
 import {faker} from "@faker-js/faker";
-,
+
+
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -84,7 +84,7 @@ const HoursSpentByWeekType = () => {
         datasets: [
             {
                 label: 'Hour\'s Spent',
-                data: labels.map(() => faker.datatype.number({ min: 0, max: 500 })),
+                data: labels.map(() => faker.datatype.number({min: 0, max: 500})),
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: 'rgba(255, 99, 132, 0.5)',
             },
@@ -117,9 +117,7 @@ const HoursSpentByWeekType = () => {
         const dayType = v === 'Week-Day' ? 0 : 1
 
 
-
     }
-
 
 
     return <Grid.Container>
