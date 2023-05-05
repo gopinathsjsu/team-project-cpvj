@@ -62,9 +62,32 @@ const CheckModal = forwardRef((props, ref) => {
 
         }
         apiCall(d)
+    }
+    const apiCall = async (d) => {
+        console.log("inside");
+        console.log(d);
+        const url = data.isCheckIn ? "http://100.26.42.194:8080/checkinRecord" : "http://100.26.42.194:8080/checkoutRecord"
 
+        try {
+            const response = await axios.post(url, d)
+
+            data.isCheckIn?alert("User Checked in, sucessfully!!") : alert("user Checked out sucessfully!!");
+
+
+
+        } catch (e) {
+
+            data.isCheckIn?alert("User alaready checked in") : alert("User didn't checked in")
+
+        }
+        setAddClassVisible(false);
+
+        setLoading(false);
 
     }
+
+    const el = loading ? <Button type="submit"><Loading color='success'/></Button> :
+        <Button type="submit">{data.isCheckIn ? "Check In" : "Check Out"}</Button>
 
 });
 export default CheckModal;
