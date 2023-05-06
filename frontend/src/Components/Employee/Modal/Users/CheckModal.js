@@ -88,6 +88,51 @@ const CheckModal = forwardRef((props, ref) => {
 
     const el = loading ? <Button type="submit"><Loading color='success'/></Button> :
         <Button type="submit">{data.isCheckIn ? "Check In" : "Check Out"}</Button>
+    return <>
+        <Modal
+            closeButton
+            preventClose
+            aria-labelledby="modal-title"
+            open={visible}
+            onClose={closeHandler}
+        >
+            <form onSubmit={formSubmitHandler}>
+
+
+                <Grid.Container gap={2} justify={'center'}>
+                    <Grid xs={12} justify={"center"}>
+                        <Text h3>{data.name}</Text>
+                    </Grid>
+                    <Grid xs={12} justify={"center"}>
+                        <Text h4>{data.description}</Text>
+                    </Grid>
+
+                    <Grid xs={12} justify={"center"}>
+                        <Input size="lg" clearable bordered type="email" labelPlaceholder="johndoe@company.com"
+                               name="email" required/>
+
+
+                    </Grid>
+
+
+                    <Grid xs={4} justify={"center"}>
+
+                    </Grid>
+                    <Grid xs={4} justify={"center"}>
+
+                        {el}
+                    </Grid>
+                    <Grid xs={4} justify={"center"}>
+
+                    </Grid>
+
+
+                </Grid.Container>
+
+            </form>
+
+        </Modal>
+    </>
 
 });
 export default CheckModal;
