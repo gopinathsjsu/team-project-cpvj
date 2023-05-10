@@ -41,6 +41,25 @@ const CreateUserModal = forwardRef(({}, ref) => {
         setLoading(true);
         apiCall(data)
     }
+    const apiCall = async (data) => {
+        console.log("inside");
+        console.log(JSON.stringify(data))
+        try{
+
+            const response =  await axios.post("http://100.26.42.194:8080/usersV2", JSON.stringify(data) )
+            console.log(response);
+            alert("User data entered sucessfully");
+            setAddClassVisible(false);
+
+
+        }catch (e){
+            alert("OOPs something happened");
+            console.log(e);
+        }
+
+        setLoading(false);
+
+    }
 });
 export default CreateUserModal;
 
