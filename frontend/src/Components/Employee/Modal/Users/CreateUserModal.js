@@ -60,6 +60,63 @@ const CreateUserModal = forwardRef(({}, ref) => {
         setLoading(false);
 
     }
+    const el = loading ? <Button type="submit"><Loading color='success'/></Button> :
+        <Button type="submit">Submit</Button>
+
+
+    const months = !isTrail ?  <Grid xs={12} justify={"center"}>
+        <Input clearable bordered type="number" labelPlaceholder="Membership" name="membership" min={1} max={12} required />
+    </Grid> : ""
+
+    return <>
+        <Modal
+            closeButton
+            preventClose
+            aria-labelledby="modal-title"
+            open={visible}
+            onClose={closeHandler}
+        >
+            <form onSubmit={formSubmitHandler}>
+
+
+                <Grid.Container gap={2} justify={'center'}>
+                    <Grid xs={12} justify={"center"}>
+                        <Text h3>Create User</Text>
+                    </Grid>
+                    <Grid xs={12} justify={"center"}>
+                        <Input clearable bordered labelPlaceholder="User Name" name="userName" required/>
+                    </Grid>
+                    <Grid xs={12} justify={"center"}>
+                        <Input clearable bordered type="email" labelPlaceholder="Email" name="email" required/>
+
+                    </Grid>
+                    <Grid xs={12} justify={"center"}>
+                        <Input clearable bordered type="password" labelPlaceholder="Password" name="password" required/>
+
+                    </Grid>
+                    <Grid xs={12} justify={"center"}>
+                        <Checkbox required isSelected={isTrail} onChange={setIsTrail}>checking out a free trail ?</Checkbox>
+                    </Grid>
+
+                    {months}
+
+                    <Grid xs={4} justify={"center"}>
+
+                    </Grid>
+                    <Grid xs={4} justify={"center"}>
+                        {el}
+                    </Grid>
+                    <Grid xs={4} justify={"center"}>
+
+                    </Grid>
+
+
+                </Grid.Container>
+
+            </form>
+
+        </Modal>
+    </>
 });
 export default CreateUserModal;
 
