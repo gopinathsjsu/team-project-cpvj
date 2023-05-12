@@ -1,15 +1,17 @@
--- name: CreateMembership :one
-INSERT INTO membership (
-    userid ,member_type,expiry_date
-) VALUES (
-             $1, $2, $3
-         ) RETURNING *;
+-- name: CreateCheckinActivity :one
+insert INTO checkinactivity
+(checkin,checkout,userid ,employeeid ,locationid)
+VALUES
+    ($1,$2,$3,$4,$5) RETURNING *;
 
--- name: GetMembership :one
-SELECT * FROM membership
-WHERE userid = $1 LIMIT 1;
 
--- name: UpdateUser :one
+-- name: GetCheckinActivity :many
+SELECT * FROM checkinactivity
+WHERE userid = $1;
+
+
+
+-- -- name: UpdateUser :one
 -- UPDATE users
 -- SET
 --     hashed_password = COALESCE(sqlc.narg(hashed_password), hashed_password),

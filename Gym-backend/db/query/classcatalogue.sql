@@ -1,15 +1,15 @@
--- name: CreateUser :one
-INSERT INTO users (
-    name,
-    email,
-    hashedpassword
-) VALUES (
-             $1, $2, $3
-         ) RETURNING *;
+-- name: CreateClassCatalogue :one
+INSERT INTO classcatalogue (courseid,userid)
+VALUES ($1,$2) RETURNING *;
 
--- name: GetUser :one
-SELECT * FROM users
-WHERE name = $1 LIMIT 1;
+
+-- name: GetUserClass :many
+SELECT * FROM classcatalogue
+WHERE userid = $1;
+
+-- name: GetClassEnrolment :many
+SELECT userid FROM classcatalogue
+WHERE courseid = $1;
 
 -- -- name: UpdateUser :one
 -- UPDATE users
