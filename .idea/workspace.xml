@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42d376fd-f193-443e-b71b-e7b899c90356" name="Changes" comment="fixed merge conflict">
-      <change afterPath="$PROJECT_DIR$/Gym-backend/api/revenueanalytics.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="42d376fd-f193-443e-b71b-e7b899c90356" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,12 +19,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/chiruhasbobbadi/WebstormProjects/team-project-cpvj/Gym-backend/api",
+    "last_opened_file_path": "/Users/jaswanth/WebstormProjects/team-project-cpvj/readme_stuff",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/readme_stuff" />
       <recent name="$PROJECT_DIR$/Gym-backend/api" />
     </key>
   </component>

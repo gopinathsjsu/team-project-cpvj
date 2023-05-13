@@ -243,7 +243,6 @@ func (server *Server) getPastWorkoutData(ctx *gin.Context) {
 	switch req.Interval {
 	case "1":
 		{
-			fmt.Println("Inside Switch 1")
 			activity, err = server.store.GetPastWorkoutData1(ctx, req.Userid)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, errorResponse(err))
@@ -252,7 +251,6 @@ func (server *Server) getPastWorkoutData(ctx *gin.Context) {
 		}
 	case "7":
 		{
-			fmt.Println("Inside Switch 7")
 			activity, err = server.store.GetPastWorkoutData7(ctx, req.Userid)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, errorResponse(err))
@@ -261,7 +259,6 @@ func (server *Server) getPastWorkoutData(ctx *gin.Context) {
 		}
 	case "30":
 		{
-			fmt.Println("Inside Switch 30")
 			activity, err = server.store.GetPastWorkoutData30(ctx, req.Userid)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, errorResponse(err))
@@ -270,7 +267,6 @@ func (server *Server) getPastWorkoutData(ctx *gin.Context) {
 		}
 	case "60":
 		{
-			fmt.Println("Inside Switch 60")
 			activity, err = server.store.GetPastWorkoutData60(ctx, req.Userid)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, errorResponse(err))
@@ -279,7 +275,6 @@ func (server *Server) getPastWorkoutData(ctx *gin.Context) {
 		}
 	case "90":
 		{
-			fmt.Println("Inside Switch 90")
 			activity, err = server.store.GetPastWorkoutData90(ctx, req.Userid)
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, errorResponse(err))

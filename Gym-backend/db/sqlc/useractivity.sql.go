@@ -48,7 +48,7 @@ func (q *Queries) CreateUserActivity(ctx context.Context, arg CreateUserActivity
 const getDayWiseActivity = `-- name: GetDayWiseActivity :many
 SELECT
     DATE(ua.start) AS date,
-    SUM(EXTRACT(EPOCH FROM (ua.end - ua.start))) AS total_time_seconds
+    SUM(EXTRACT(MINUTE FROM (ua.end - ua.start))) AS total_time_seconds
 FROM
     useractivity ua
 WHERE
