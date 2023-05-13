@@ -52,14 +52,14 @@ Friday 3pm-3:30pm
 
 ## Component Diagram:
 
-![component_diagram.png](readme_stuff/component_diagram.png)
+![component_diagram.png](readme_stuff/component_diagram.jpg)
 
 ## DB Schema:
 ![db_schema.png](readme_stuff/db_schema.png)
 
 ## Auto Scaled EC 2 Instances:
 
-![auto_scale.png](readme_stuff/auto_Scale.png)
+![auto_scale.png](readme_stuff/auto_scale.png)
 
 
 ## Auto-scaling-instances:
@@ -76,17 +76,23 @@ Friday 3pm-3:30pm
 
 
 ## Documentation
-## Project Task Board
+## Project Task Board & Burndown Chart
+[Document Link](https://docs.google.com/spreadsheets/d/1pIRMznT8d--j0yJnySSWdwwGZKkn1hQ8/edit?usp=sharing&ouid=115628498657907775286&rtpof=true&sd=true)
 ## Project Journal
-## Burndown Chart
-
+[Document Link](https://docs.google.com/document/d/1-r9GnjW0JkOG2DIHnoRFhT2R8b0my5-K/edit?usp=sharing&ouid=115628498657907775286&rtpof=true&sd=true)
 
 ## UI Wireframes:
+Login
 ![img_7.png](readme_stuff/wireframe1.png)
+Home Page
 ![img_8.png](readme_stuff/wireframe2.png)
+User Dashboard
 ![img_9.png](readme_stuff/wireframe3.png)
+User Dashboard
 ![img_10.png](readme_stuff/wireframe4.png)
+Employee (Admin) Dashboard
 ![img_11.png](readme_stuff/wireframe5.png)
+Employee (Admin) Dashboard
 ![img_12.png](readme_stuff/wireframe6.png)
 
 
