@@ -32,9 +32,9 @@ This core value was held by Jaswanth. Held responsible for taking courage to tel
 ### Deployment: Amazon EC2 Auto scaled cluster with Load balancing (Deployed using Docker Image)
 
 ## Tasks:
-### Frontend: Chiruhas, Raviraj, Priyanka
-### Backend: Jaswanth, Priyanka, Jaswanth
-### Deployment: Raviraj, Jaswanth, Chiruhas
+### Frontend: Chiruhas, Raviraj, Priyanka, Jaswanth
+### Backend: Jaswanth, Priyanka, Chiruhas, Raviraj
+### Deployment: Raviraj, Jaswanth, Chiruhas, Priyanka
 ### Database: Chiruhas, Priyanka, Raviraj, Jaswanth
 
 
