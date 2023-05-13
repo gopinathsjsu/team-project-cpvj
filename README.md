@@ -1,5 +1,7 @@
 # Acme Fitness (Gym Management System)
 
+![](readme_stuff/jiff.gif)
+
 ## Team CPVJ
 
 # Team Members
