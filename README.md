@@ -79,9 +79,9 @@ Friday 3pm-3:30pm
 
 ## Documentation
 ## Project Task Board & Burndown Chart
-[Document Link](https://docs.google.com/spreadsheets/d/1pIRMznT8d--j0yJnySSWdwwGZKkn1hQ8/edit?usp=sharing&ouid=115628498657907775286&rtpof=true&sd=true)
+[Project Task Board & Burndown Chart Link](https://docs.google.com/spreadsheets/d/1pIRMznT8d--j0yJnySSWdwwGZKkn1hQ8/edit?usp=sharing&ouid=115628498657907775286&rtpof=true&sd=true)
 ## Project Journal
-[Document Link](https://docs.google.com/document/d/1-r9GnjW0JkOG2DIHnoRFhT2R8b0my5-K/edit?usp=sharing&ouid=115628498657907775286&rtpof=true&sd=true)
+[Project Journal Link](https://docs.google.com/document/d/1-r9GnjW0JkOG2DIHnoRFhT2R8b0my5-K/edit?usp=sharing&ouid=115628498657907775286&rtpof=true&sd=true)
 
 ## UI Wireframes:
 Login
