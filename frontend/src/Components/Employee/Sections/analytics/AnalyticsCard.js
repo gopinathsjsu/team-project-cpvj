@@ -1,10 +1,9 @@
-
-
 import {Card, Grid, Text} from "@nextui-org/react";
 import React from "react";
 
 
-const AnalyticsCards = (props)=> {
+const AnalyticsCards = (props)=>{
+
 
     /**
      * Here the data i get is an array of the form [ {prev:val1, current:val2, change:val3}..]
