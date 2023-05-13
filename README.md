@@ -83,7 +83,7 @@ Friday 3pm-3:30pm
 ## Project Journal
 [Project Journal Link](https://docs.google.com/document/d/1-r9GnjW0JkOG2DIHnoRFhT2R8b0my5-K/edit?usp=sharing&ouid=115628498657907775286&rtpof=true&sd=true)
 ## API Documentation
-[API Documentation](https://docs.google.com/document/d/1-r9GnjW0JkOG2DIHnoRFhT2R8b0my5-K/edit?usp=sharing&ouid=115628498657907775286&rtpof=true&sd=true)
+[API Documentation](https://drive.google.com/file/d/1pvqbIYfLGLNQMMh1jvHXzQzWqKM5_f1n/view?usp=sharing)
 
 ## UI Wireframes:
 Login
